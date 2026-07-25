@@ -1,5 +1,6 @@
 from models.room import * 
 from database import *
+from models.customer import * 
 
 def main_menu():
     print("-" * 30)
@@ -57,4 +58,9 @@ def remove_room():
                 break
 
 def book_room():
-     pass
+     name = input("Customer Name: ")
+     phone = int(input("Phone: "))
+     email = input("Email: ")
+
+
+     room = Customer(name, phone, email)
