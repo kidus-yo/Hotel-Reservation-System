@@ -2,7 +2,16 @@
 from menu import *
 
 
-def main(choice):
-   choice = main_menu()
-   if choice == 1:
-      add_room()
+def main():
+   running = True
+   while running:
+      choice = main_menu()
+      if choice == 1:
+         add_room()
+      elif choice == 2:
+         view_room()
+      elif choice == 9:
+         running = False
+         print("Thanks! for choosing us💐🎴")
+if __name__ == "__main__":
+   main()
