@@ -49,4 +49,12 @@ def view_room():
         print("_" * 30)
 
 
-    
+def remove_room():
+        delete_room = int(input("Enter the room number you want to remove: "))
+        for room in rooms:
+            if delete_room == room.room_number:
+                rooms.remove(room)
+                break
+
+def book_room():
+     pass

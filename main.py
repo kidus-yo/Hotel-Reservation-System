@@ -10,6 +10,10 @@ def main():
          add_room()
       elif choice == 2:
          view_room()
+      elif choice == 3:
+         remove_room()
+      elif choice == 4:
+         book_room()
       elif choice == 9:
          running = False
          print("Thanks! for choosing us💐🎴")
