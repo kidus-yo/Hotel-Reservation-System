@@ -67,4 +67,7 @@ def book_room():
 
 
      room = Customer(name, phone, email, number, check_in, check_out)
+
+
+def cancel_reservation():
      
