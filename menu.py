@@ -61,6 +61,10 @@ def book_room():
      name = input("Customer Name: ")
      phone = int(input("Phone: "))
      email = input("Email: ")
+     number = int(input("Enter an ID: "))
+     check_in = int(input("Check-in Date: "))
+     check_out = int(input("Check-out Date: "))
 
 
-     room = Customer(name, phone, email)
+     room = Customer(name, phone, email, number, check_in, check_out)
+     
