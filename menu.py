@@ -65,8 +65,8 @@ def book_room():
      check_in = int(input("Check-in Date: "))
      check_out = int(input("Check-out Date: "))
 
-
-     reserve = Reservation(name, phone, email, number, check_in,check_out, )
+     customer = Customer(name, phone, email, number)
+     reserve = Reservation(check_in, check_out)
      reservations.append(reserve)
 
      
