@@ -1,2 +1,2 @@
 rooms = [] #for adding rooms
-reservation = []
+reservations = []

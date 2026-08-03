@@ -1,7 +1,7 @@
 from models.room import * 
 from database import *
 from models.customer import * 
-
+from models.reservation import * 
 def main_menu():
     print("-" * 30)
     print("========KIDUS GRAND HOTEL🏩=========")
@@ -66,8 +66,10 @@ def book_room():
      check_out = int(input("Check-out Date: "))
 
 
-     room = Customer(name, phone, email, number, check_in, check_out)
+     reserve = Reservation(name, phone, email, number, check_in,check_out, )
+     reservations.append(reserve)
 
+     
 
 def cancel_reservation():
      
