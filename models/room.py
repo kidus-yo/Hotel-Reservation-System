@@ -6,3 +6,5 @@ class Room:
        self.room_type = room_type
        self.room_price = room_price
     
+    def describe(self):
+        return f"{self.room_number}"

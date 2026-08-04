@@ -61,10 +61,15 @@ def book_room():
      name = input("Customer Name: ")
      phone = int(input("Phone: "))
      email = input("Email: ")
-     number = int(input("Enter an ID: "))
-     
+     room_number = int(input("Enter Room Number: "))
 
-     customer = Customer(name, phone, email, number)
+     selected_room = None
+
+     for room in rooms:
+          if room_number == room.room_number:
+               selected_room = room
+               break
+     customer = Customer(name, phone, email)
      customers.append(customer)
      
 

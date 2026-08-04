@@ -12,5 +12,3 @@ class Reservation():
 
     def reserve_id(self):
          return f"{self.reservation_ID}"
-      
-
