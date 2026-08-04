@@ -62,14 +62,10 @@ def book_room():
      phone = int(input("Phone: "))
      email = input("Email: ")
      number = int(input("Enter an ID: "))
-     check_in = int(input("Check-in Date: "))
-     check_out = int(input("Check-out Date: "))
-
-     customer = Customer(name, phone, email, number)
-     reserve = Reservation(check_in, check_out)
-     reservations.append(reserve)
-
      
 
-def cancel_reservation():
+     customer = Customer(name, phone, email, number)
+     customers.append(customer)
+     
+
      
