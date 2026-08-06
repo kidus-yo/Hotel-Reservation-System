@@ -62,6 +62,8 @@ def book_room():
      phone = int(input("Phone: "))
      email = input("Email: ")
      room_number = int(input("Enter Room Number: "))
+     check_in = int(input("Enter the check-in Date: "))
+     check_out = int(input("Enter the check-out Date: "))
 
      selected_room = None
 
@@ -71,6 +73,9 @@ def book_room():
                break
      customer = Customer(name, phone, email)
      customers.append(customer)
-     
+     reservation = Reservation(check_in, check_out, room, customer)
+     reservations.append(reservation)
+     print("Customer booked Successfully!✅")
+
 
      

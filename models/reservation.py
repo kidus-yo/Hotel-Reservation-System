@@ -5,9 +5,11 @@ from database import *
 class Reservation():
  
     reservation_ID = 1101     
-    def __init__(self, check_in, check_out):
+    def __init__(self, check_in, check_out, room, customer):
         self.check_in = check_in
         self.check_out = check_out
+        self.room = room
+        self.customer = customer
         Reservation.reservation_ID+=1
 
     def reserve_id(self):
