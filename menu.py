@@ -97,7 +97,7 @@ def book_room():
 def cancel_reservation():
   enter_ID = int(input("Enter your reservation ID: "))
   for reserve in reservations:
-   if enter_ID == Reservation.reserve_id():
+    if enter_ID == Reservation.reserve_id():
        print(f"{reserve.customer.name}")
       
      
