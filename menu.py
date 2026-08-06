@@ -1,7 +1,10 @@
+
 from models.room import * 
 from database import *
 from models.customer import * 
 from models.reservation import * 
+
+
 def main_menu():
     print("-" * 30)
     print("========KIDUS GRAND HOTEL🏩=========")
@@ -51,6 +54,7 @@ def view_room():
 
 
 def remove_room():
+
         delete_room = int(input("Enter the room number you want to remove: "))
         for room in rooms:
             if delete_room == room.room_number:
@@ -58,24 +62,33 @@ def remove_room():
                 break
 
 def book_room():
-     name = input("Customer Name: ")
-     phone = int(input("Phone: "))
-     email = input("Email: ")
-     room_number = int(input("Enter Room Number: "))
-     check_in = int(input("Enter the check-in Date: "))
-     check_out = int(input("Enter the check-out Date: "))
 
-     selected_room = None
+    running = True
 
-     for room in rooms:
+    while running:
+
+      name = input("Customer Name: ")
+      phone = int(input("Phone: "))
+      email = input("Email: ")
+      room_number = int(input("Enter Room Number: "))
+      check_in = input("Enter the check-in Date: ")
+      check_out = input("Enter the check-out Date: ")
+
+      selected_room = None
+
+      for room in rooms:
           if room_number == room.room_number:
                selected_room = room
                break
-     customer = Customer(name, phone, email)
-     customers.append(customer)
-     reservation = Reservation(check_in, check_out, room, customer)
-     reservations.append(reservation)
-     print("Customer booked Successfully!✅")
+
+          else:
+               print("NOT FOUND!❌")
+
+      customer = Customer(name, phone, email)
+      customers.append(customer)
+      reservation = Reservation(check_in, check_out, room, customer)
+      reservations.append(reservation)
+      print("Customer booked Successfully!✅")
 
 
      
