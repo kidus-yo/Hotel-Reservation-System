@@ -79,16 +79,19 @@ def book_room():
       for room in rooms:
           if room_number == room.room_number:
                selected_room = room
+               customer = Customer(name, phone, email)
+               customers.append(customer)
+               reservation = Reservation(check_in, check_out, room, customer)
+               reservations.append(reservation)
+               print("Customer booked Successfully!✅")
+               running = False
                break
 
           else:
                print("NOT FOUND!❌")
+               print("Please try again")
 
-      customer = Customer(name, phone, email)
-      customers.append(customer)
-      reservation = Reservation(check_in, check_out, room, customer)
-      reservations.append(reservation)
-      print("Customer booked Successfully!✅")
+    
 
 
      
