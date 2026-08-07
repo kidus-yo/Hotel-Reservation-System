@@ -16,6 +16,8 @@ def main():
          book_room()
       elif choice == 5:
          cancel_reservation()
+      elif choice == 6:
+         view_reservation()
       elif choice == 9:
          running = False
          print("Thanks! for choosing us💐🎴")

@@ -102,4 +102,23 @@ def cancel_reservation():
        reservations.remove(reserve)
        print(f"Reservation {enter_ID} canceled successfully!✅")
       
-     
+
+def view_reservation():
+     enter_ID = int(input("Enter your reservation ID: "))
+     for reserve in reservations: 
+
+        if enter_ID == Reservation.reservation_ID: 
+         print(f"Customer Name: {reserve.customer.name}") 
+         print(f"Phone: {reserve.customer.phone}")
+         print(f"Email: {reserve.customer.email}")
+         print(f"Room Number: {reserve.room.room_number}")
+         print(f"Check-in: {reserve.check_in}")
+         print(f"Check-out: {reserve.check_out}")
+         print(f"Reservation ID: {Reservation.reservation_ID}")      
+
+        elif enter_ID != Reservation.reservation_ID:
+            print("No reservation ID found!!!")
+
+        else:
+            print("Something went wrong!")
+            
