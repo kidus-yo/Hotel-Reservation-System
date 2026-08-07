@@ -84,6 +84,7 @@ def book_room():
                reservation = Reservation(check_in, check_out, room, customer)
                reservations.append(reservation)
                print("Customer booked Successfully!✅")
+               print(f"Reservation ID: {Reservation.reservation_ID}")
                
                running = False
                break
@@ -97,7 +98,8 @@ def book_room():
 def cancel_reservation():
   enter_ID = int(input("Enter your reservation ID: "))
   for reserve in reservations:
-    if enter_ID == Reservation.reserve_id():
-       print(f"{reserve.customer.name}")
+    if enter_ID == Reservation.reservation_ID:
+       reservations.remove(reserve)
+       print(f"Reservation {enter_ID} canceled successfully!✅")
       
      
