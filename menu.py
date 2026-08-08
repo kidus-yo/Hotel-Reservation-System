@@ -32,7 +32,7 @@ def add_room():
     print("*" * 30)
 
     room_number = int(input("Enter a room number: "))
-    room_type = input("Enter Room Type: ")
+    room_type = input("Enter Room Type: ").lower()
     room_price = float(input("Enter room price: "))
 
     room = Room(room_number, room_type, room_price)
@@ -67,9 +67,9 @@ def book_room():
 
     while running:
 
-      name = input("Customer Name: ")
+      name = input("Customer Name: ").lower()
       phone = int(input("Phone: "))
-      email = input("Email: ")
+      email = input("Email: ").lower()
       room_number = int(input("Enter Room Number: "))
       check_in = input("Enter the check-in Date: ")
       check_out = input("Enter the check-out Date: ")
@@ -122,3 +122,22 @@ def view_reservation():
         else:
             print("Something went wrong!")
             
+
+def search_customer():
+    name = input("Enter Name: ").lower()
+    phone =  int(input("Enter phone number: "))
+    email = input("Enter Email: ").lower()
+
+    for reserve in reservations:
+        if name == reserve.customer.name:
+            if phone ==  reserve.customer.phone:
+                if email == reserve.customer.email:
+                    print("-" * 30)
+                    print(f"Customer Name: {reserve.customer.name}") 
+                    print(f"Phone: {reserve.customer.phone}")
+                    print(f"Email: {reserve.customer.email}")
+                    print(f"Room Number: {reserve.room.room_number}")
+                    print(f"Check-in: {reserve.check_in}")
+                    print(f"Check-out: {reserve.check_out}")
+                    print(f"Reservation ID: {Reservation.reservation_ID}")
+                    print("-" * 30)  

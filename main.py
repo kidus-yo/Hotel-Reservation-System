@@ -18,6 +18,8 @@ def main():
          cancel_reservation()
       elif choice == 6:
          view_reservation()
+      elif choice == 7:
+         search_customer()
       elif choice == 9:
          running = False
          print("Thanks! for choosing us💐🎴")
