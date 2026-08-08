@@ -3,6 +3,7 @@ from models.room import *
 from database import *
 from models.customer import * 
 from models.reservation import * 
+from models.hotel import * 
 
 
 def main_menu():
@@ -141,3 +142,6 @@ def search_customer():
                     print(f"Check-out: {reserve.check_out}")
                     print(f"Reservation ID: {Reservation.reservation_ID}")
                     print("-" * 30)  
+
+def hotel_statstics():
+    pass

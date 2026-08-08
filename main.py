@@ -20,6 +20,8 @@ def main():
          view_reservation()
       elif choice == 7:
          search_customer()
+      elif choice == 8:
+         hotel_statstics()
       elif choice == 9:
          running = False
          print("Thanks! for choosing us💐🎴")
