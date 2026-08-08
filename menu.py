@@ -5,6 +5,7 @@ from models.customer import *
 from models.reservation import * 
 from models.hotel import * 
 
+value = 0
 
 def main_menu():
     print("-" * 30)
@@ -26,7 +27,7 @@ def main_menu():
     return choice
 
 
-def add_room():
+def add_room(value):
 
     print("*" * 30)
     print("Room Registration®️")
@@ -37,7 +38,10 @@ def add_room():
     room_price = float(input("Enter room price: "))
 
     room = Room(room_number, room_type, room_price)
+    value = room.total_revenue()
+    
     rooms.append(room)
+    return value
 
 
 def view_room():
@@ -143,5 +147,7 @@ def search_customer():
                     print(f"Reservation ID: {Reservation.reservation_ID}")
                     print("-" * 30)  
 
-def hotel_statstics():
-    pass
+def hotel_statstics(value):
+    print(f"Total Rooms:{Room.total_rooms}")
+    print(f"Occupied Rooms: {Room.occupied_rooms}")
+    print(f"Total Revenue: {value}")

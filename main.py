@@ -7,7 +7,7 @@ def main():
    while running:
       choice = main_menu()
       if choice == 1:
-         add_room()
+         add_room(value)
       elif choice == 2:
          view_room()
       elif choice == 3:
@@ -21,7 +21,7 @@ def main():
       elif choice == 7:
          search_customer()
       elif choice == 8:
-         hotel_statstics()
+         hotel_statstics(value)
       elif choice == 9:
          running = False
          print("Thanks! for choosing us💐🎴")
