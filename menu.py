@@ -151,3 +151,9 @@ def hotel_statstics(value):
     print(f"Total Rooms:{Room.total_rooms}")
     print(f"Occupied Rooms: {Room.occupied_rooms}")
     print(f"Total Revenue: {value}")
+
+
+
+
+
+
