@@ -148,10 +148,11 @@ def search_customer():
                     print("-" * 30)  
 
 def hotel_statstics(value):
-    print(f"Total Rooms:{Room.total_rooms}")
+    print(f"Total Rooms: {Room.add_rooms}")
+    print(f"Avalilabe Rooms:{Room.total_rooms}")
     print(f"Occupied Rooms: {Room.occupied_rooms}")
     print(f"Total Revenue: {value}")
-
+    print("")
 
 
 

@@ -5,6 +5,7 @@ class Room:
     total_rooms = 40
     occupied_rooms = 0
     revenue = 0
+    add_rooms = 0
     
 
     def __init__(self, room_number, room_type, room_price):
@@ -13,7 +14,7 @@ class Room:
        self.room_price = room_price
        Room.occupied_rooms +=1
        Room.total_rooms -= 1
-
+       
        
     
     def describe(self):
