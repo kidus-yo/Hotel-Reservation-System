@@ -38,7 +38,13 @@ def add_room(value):
     print("Room Registration®️")
     print("*" * 30)
 
-    room_number = int(input("Enter a room number: "))
+
+    try:
+     room_number = int(input("Enter a room number: "))
+    except ValueError:
+       print("Please Enter number only")
+
+    
     room_type = input("Enter Room Type: ").lower()
     room_price = float(input("Enter room price: "))
 
