@@ -23,7 +23,10 @@ def main_menu():
     print("8. Hotel Statstics")
     print("9. Exit❌")
 
-    choice = int(input("Enter your choice: "))
+    try: 
+     choice = int(input("Enter your choice: "))
+    except ValueError:
+     print("Please Use only a number!")
     return choice
 
 
@@ -153,6 +156,16 @@ def hotel_statstics(value):
     print(f"Occupied Rooms: {Room.occupied_rooms}")
     print(f"Total Revenue: {value}")
     print("")
+
+
+
+
+
+
+
+
+
+
 
 
 
