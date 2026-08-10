@@ -8,3 +8,4 @@ class Hotel:
         self.room = room
         self.customer = customer
         self.reservation = reservation
+        

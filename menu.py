@@ -25,9 +25,11 @@ def main_menu():
 
     try: 
      choice = int(input("Enter your choice: "))
+     return choice
     except ValueError:
      print("Please Use only a number!")
-    return choice
+    except EOFError:
+        print("Bro you have the exit choice!")
 
 
 def add_room(value):
@@ -62,13 +64,14 @@ def view_room():
 
 
 def remove_room():
-
-        delete_room = int(input("Enter the room number you want to remove: "))
-        for room in rooms:
+         try:
+          delete_room = int(input("Enter the room number you want to remove: "))
+          for room in rooms:
             if delete_room == room.room_number:
                 rooms.remove(room)
                 break
-
+         except ValueError:
+             print("Please only choose a number!")
 def book_room():
 
     running = True
