@@ -90,43 +90,57 @@ def book_room():
 
     while running:
 
-      name = input("Customer Name: ").lower()
-      phone = int(input("Phone: "))
-      email = input("Email: ").lower()
-      room_number = int(input("Enter Room Number: "))
-      check_in = input("Enter the check-in Date: ")
-      check_out = input("Enter the check-out Date: ")
+      try:
+        name = input("Customer Name: ").lower()
+        phone = int(input("Phone: "))
+        email = input("Email: ").lower()
+        room_number = int(input("Enter Room Number: "))
+        check_in = input("Enter the check-in Date: ")
+        check_out = input("Enter the check-out Date: ")
 
-      selected_room = None
+        selected_room = None
 
-      for room in rooms:
-          if room_number == room.room_number:
-               selected_room = room
-               customer = Customer(name, phone, email)
-               customers.append(customer)
-               reservation = Reservation(check_in, check_out, room, customer)
-               reservations.append(reservation)
-               print("Customer booked Successfully!✅")
-               print(f"Reservation ID: {Reservation.reservation_ID}")
-               
-               running = False
-               break
+        for room in rooms:
+            if room_number == room.room_number:
+                selected_room = room
+                customer = Customer(name, phone, email)
+                customers.append(customer)
+                reservation = Reservation(check_in, check_out, room, customer)
+                reservations.append(reservation)
+                print("Customer booked Successfully!✅")
+                print(f"Reservation ID: {Reservation.reservation_ID}")
+                
+                running = False
+                break
+            elif room.room_number == "":
+               print("No Room Number Given!")
+            else:
+                print("NOT FOUND!❌")
+                print("Please try again")
 
-          else:
-               print("NOT FOUND!❌")
-               print("Please try again")
+      except ValueError:
+       print("Enter only the requred inputs")
 
-    
+      except Exception:
+         print("Something Went Wrong!")
 
 def cancel_reservation():
-  enter_ID = int(input("Enter your reservation ID: "))
-  for reserve in reservations:
-    if enter_ID == Reservation.reservation_ID:
-       reservations.remove(reserve)
-       print(f"Reservation {enter_ID} canceled successfully!✅")
-      
+
+  try:
+    enter_ID = int(input("Enter your reservation ID: "))
+    for reserve in reservations:
+        if enter_ID == Reservation.reservation_ID:
+         reservations.remove(reserve)
+         print(f"Reservation {enter_ID} canceled successfully!✅")
+
+  except ValueError:
+     print("Please Enter a number only!")   
+  except Exception:
+     print("Somehting Went Wrong")
 
 def view_reservation():
+
+    try:
      enter_ID = int(input("Enter your reservation ID: "))
      for reserve in reservations: 
 
@@ -144,9 +158,15 @@ def view_reservation():
 
         else:
             print("Something went wrong!")
-            
+    except ValueError:
+       print("Please Enter a number only!")        
+
+    except Exception:
+       print("Something Went Wrong!")
 
 def search_customer():
+
+  try:
     name = input("Enter Name: ").lower()
     phone =  int(input("Enter phone number: "))
     email = input("Enter Email: ").lower()
@@ -163,8 +183,13 @@ def search_customer():
                     print(f"Check-in: {reserve.check_in}")
                     print(f"Check-out: {reserve.check_out}")
                     print(f"Reservation ID: {Reservation.reservation_ID}")
-                    print("-" * 30)  
-
+                    print("-" * 30)
+  except ValueError:
+     print("Enter only the required inputs!")
+              
+  except Exception:
+     print("Something went Wrong")
+     
 def hotel_statstics(value):
     print(f"Total Rooms: {Room.add_rooms}")
     print(f"Avalilabe Rooms:{Room.total_rooms}")
