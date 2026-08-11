@@ -44,16 +44,20 @@ def add_room(value):
     except ValueError:
        print("Please Enter number only")
 
-    
-    room_type = input("Enter Room Type: ").lower()
-    room_price = float(input("Enter room price: "))
+    try:    
+        room_type = input("Enter Room Type: ").lower()
+    except ValueError:
+        print("Please ")
 
-    room = Room(room_number, room_type, room_price)
-    value = room.total_revenue()
+    try:
+     room_price = float(input("Enter room price: "))
+     room = Room(room_number, room_type, room_price)
+     value = room.total_revenue()
+     rooms.append(room)
+     return value
     
-    rooms.append(room)
-    return value
-
+    except ValueError:
+     print("Please Enter a number only!")
 
 def view_room():
 
@@ -70,6 +74,7 @@ def view_room():
 
 
 def remove_room():
+         
          try:
           delete_room = int(input("Enter the room number you want to remove: "))
           for room in rooms:
@@ -78,6 +83,7 @@ def remove_room():
                 break
          except ValueError:
              print("Please only choose a number!")
+
 def book_room():
 
     running = True
